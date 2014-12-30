@@ -1,0 +1,28 @@
+﻿@using TheGalery.Web.Models
+@model ImageGroupViewModel
+@{
+
+    if (Model == null)
+    {
+        Response.SetStatus(HttpStatusCode.NotFound);
+        return;
+    }
+
+    Page.Title = "Gallery - " + Model.Name;
+}
+<head>
+    <link href="~/Content/thumbnails.css" rel="stylesheet" />
+</head>
+
+<ul class="thumbnails" data-role="listview">
+    @foreach (ImageViewRow photo in Model)
+    {
+        string imagePath = Url.Action("Image", "Home", new { name = photo.Name, path = photo.Path });
+        <li>
+            <a>
+                <img alt="thumbnail of @photo.Name" src="@imagePath" class="thumbnail-border" />
+                <span>@photo.Name</span>
+            </a>
+        </li>
+    }
+</ul>
