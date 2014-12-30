@@ -52,7 +52,7 @@ namespace TheGalery.Web.Controllers
             var imageManager = new ImageManager(UserCredentials.Default);
             ImageGroup imageGroup = imageManager.GetImages(name).Result;
             string path = Server.MapPath(string.Format("~/Images/{0}", name));
-            return PartialView(new ImageGroupViewModel(imageGroup.Name, path));
+            return View(new ImageGroupViewModel(imageGroup.Name, path));
         }
 
         public ActionResult Image(string name, string path)
