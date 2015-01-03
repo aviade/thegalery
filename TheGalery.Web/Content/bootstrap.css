@@ -314,8 +314,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333333;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #333333;
 }
 
 input,
@@ -3387,7 +3387,7 @@ input[type="button"].btn-block {
   display: inline-block;
   vertical-align: middle;
 }
-
+    
 .btn-group > .btn,
 .btn-group-vertical > .btn {
   position: relative;
@@ -4082,6 +4082,34 @@ textarea.input-group-sm > .input-group-btn > .btn {
   }
 }
 
+.navbar-center:before,
+.navbar-center:after {
+  display: table;
+  content: " ";
+}
+
+.navbar-center:after {
+  clear: both;  
+}
+
+.navbar-center:before,
+.navbar-center:after {
+  display: table;
+  content: " ";
+}
+
+.navbar-center:after {
+  clear: both;
+}
+
+@media (min-width: 768px) {
+  .navbar-center {
+      display: inline-block;
+      width: 30px;
+      margin: 0 auto;
+  }
+}
+
 .navbar-collapse {
   max-height: 340px;
   padding-right: 15px;
@@ -4169,8 +4197,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   position: fixed;
-  right: 0;
-  left: 0;
+  left: 10%;
   border-width: 0 0 1px;
 }
 
@@ -4207,6 +4234,15 @@ textarea.input-group-sm > .input-group-btn > .btn {
   .navbar > .container .navbar-brand {
     margin-left: -15px;
   }
+}
+
+.navbar-image {
+  padding: 9px 10px;
+  margin-top: 7px;
+  margin-bottom: 6px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 
 .navbar-toggle {

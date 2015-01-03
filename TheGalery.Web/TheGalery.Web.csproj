@@ -173,21 +173,50 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="config.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\thumbnails.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\banner.gif" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\home.png" />
+    <Content Include="fonts\Logo.png" />
+    <Content Include="fonts\Yael.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Art\Empty1.png" />
+    <Content Include="Images\Art\Empty2.png" />
+    <Content Include="Images\Art\Empty3.png" />
+    <Content Include="Images\Art\Featured\gallery-empty.png" />
     <Content Include="Images\Familiy\Empty2.png" />
     <Content Include="Images\Familiy\Empty3.png" />
     <Content Include="Images\Familiy\Featured\gallery-empty.png" />
     <Content Include="Images\Familiy\Empty1.png" />
     <Content Include="Images\InteriorDesign\gallery-empty.png" />
+    <Content Include="Images\InteriorDesign\WP_20140526_005.jpg" />
+    <Content Include="Images\InteriorDesign\WP_20140531_001.jpg" />
+    <Content Include="Images\InteriorDesign\WP_20140531_002.jpg" />
+    <Content Include="Images\Misc\gallery-empty.png" />
     <Content Include="Images\Passport\gallery-empty.png" />
+    <Content Include="Images\WP_20140526_005.jpg" />
+    <Content Include="Images\WP_20140531_001.jpg" />
+    <Content Include="Images\WP_20140531_002.jpg" />
+    <Content Include="Images\WP_20140531_003.jpg" />
+    <Content Include="Images\WP_20140531_004.jpg" />
+    <Content Include="jbcore\classic\fonts\juicebox.svg" />
+    <Content Include="jbcore\classic\img\jb001.png" />
+    <Content Include="jbcore\classic\img\spinner.gif" />
+    <Content Include="jbcore\classic\theme.css" />
+    <Content Include="jbcore\full.html" />
+    <Content Include="jbcore\juicebox.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="jbcore\classic\fonts\juicebox.eot" />
+    <Content Include="jbcore\classic\fonts\juicebox.ttf" />
+    <Content Include="jbcore\classic\fonts\juicebox.woff" />
     <None Include="Properties\PublishProfiles\thegalery.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -201,6 +230,11 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="thumbs\WP_20140526_005.jpg" />
+    <Content Include="thumbs\WP_20140531_001.jpg" />
+    <Content Include="thumbs\WP_20140531_002.jpg" />
+    <Content Include="thumbs\WP_20140531_003.jpg" />
+    <Content Include="thumbs\WP_20140531_004.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

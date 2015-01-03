@@ -7,6 +7,19 @@
     <link href="~/Content/thumbnails.css" rel="stylesheet" />
 </head>
 
+<!--START JUICEBOX EMBED-->
+<script src="jbcore/juicebox.js"></script>
+<script>
+    new juicebox({
+        containerId: 'juicebox-container',
+        galleryWidth: '100%',
+        galleryHeight: '75%',
+        backgroundColor: "#333333"
+    });
+</script>
+<div id="juicebox-container"></div>
+<!--END JUICEBOX EMBED-->
+
 <ul class="thumbnails" data-role="listview">
     @foreach (ImageGroupViewModel imageGroup in @Model.Images)
     {
@@ -14,9 +27,9 @@
         string imagePath = Url.Action("Images", "Home", new { name = imageGroup.Name });
         <li>
             <a href="@imagePath">
-                <img alt="Images from @imageGroup.Name" src="@thumbnailpath" class="thumbnail-no-border" />
                 <span class="below-image">@imageGroup.Name</span>
-                <span>@imageGroup.Count photo(s)</span>
+                <span>(@imageGroup.Count)</span>
+                <img alt="Images from @imageGroup.Name" src="@thumbnailpath" class="thumbnail-no-border" />
             </a>
         </li>
     }

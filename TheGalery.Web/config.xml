@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<juiceboxgallery 
+
+	useThumbDots="true"
+	useFullscreenExpand="true"
+
+>
+  <image imageURL="images/WP_20140531_001.jpg"
+	thumbURL="thumbs/WP_20140531_001.jpg"
+	linkURL="images/WP_20140531_001.jpg"
+	linkTarget="_blank"
+	sourcePath="C:\Users\avezra\Pictures\From Windows Phone\Camera roll\WP_20140531_001.jpg">
+    <title><![CDATA[WP_20140531_001]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/WP_20140531_002.jpg"
+	thumbURL="thumbs/WP_20140531_002.jpg"
+	linkURL="images/WP_20140531_002.jpg"
+	linkTarget="_blank"
+	sourcePath="C:\Users\avezra\Pictures\From Windows Phone\Camera roll\WP_20140531_002.jpg">
+    <title><![CDATA[WP_20140531_002]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/WP_20140531_003.jpg"
+	thumbURL="thumbs/WP_20140531_003.jpg"
+	linkURL="images/WP_20140531_003.jpg"
+	linkTarget="_blank"
+	sourcePath="C:\Users\avezra\Pictures\From Windows Phone\Camera roll\WP_20140531_003.jpg">
+    <title><![CDATA[WP_20140531_003]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/WP_20140531_004.jpg"
+	thumbURL="thumbs/WP_20140531_004.jpg"
+	linkURL="images/WP_20140531_004.jpg"
+	linkTarget="_blank"
+	sourcePath="C:\Users\avezra\Pictures\From Windows Phone\Camera roll\WP_20140531_004.jpg">
+    <title><![CDATA[WP_20140531_004]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/WP_20140526_005.jpg"
+	thumbURL="thumbs/WP_20140526_005.jpg"
+	linkURL="images/WP_20140526_005.jpg"
+	linkTarget="_blank"
+	sourcePath="C:\Users\avezra\Pictures\From Windows Phone\Camera roll\WP_20140526_005.jpg">
+    <title><![CDATA[WP_20140526_005]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+</juiceboxgallery>
