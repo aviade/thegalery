@@ -10,22 +10,23 @@
         return;
     }
 
-    var size = Request["size"] ?? "";
+    var size = Model.ImageSize;
 
     var width = 0;
     var height = 0;
-    switch (size.ToUpperInvariant())
+    switch (size)
     {
-        case "":
-        case "SMALL":
+        case ImageSize.AsIs:
+            break;
+        case ImageSize.Small:
             width = 200;
             height = 200;
             break;
-        case "MEDIUM":
+        case ImageSize.Medium:
             width = 400;
             height = 300;
             break;
-        case "LARGE":
+        case ImageSize.Large:
             width = 625;
             height = 625;
             break;
@@ -35,5 +36,12 @@
     }
 
     var image = new WebImage(Model.Path);
-    image.Resize(width, height).Write();
+    if (width == 0)
+    {
+        image.Write();
+    }
+    else
+    {
+        image.Resize(width, height).Write();
+    }
 }

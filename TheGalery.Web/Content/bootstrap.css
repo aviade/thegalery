@@ -4245,6 +4245,16 @@ textarea.input-group-sm > .input-group-btn > .btn {
   border-radius: 4px;
 }
 
+.navbar-home {
+  padding: 9px 10px;
+  margin-top: 3px;
+  margin-bottom: 6px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+
 .navbar-toggle {
   position: relative;
   float: right;
@@ -4537,7 +4547,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
+  background-color: white;
   border-color: #080808;
 }
 
@@ -4561,7 +4571,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #ffffff;
+  color: #ac2925;
   background-color: transparent;
 }
 

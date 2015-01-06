@@ -1,0 +1,10 @@
+﻿@using TheGalery.Web.Models
+@model ImageViewRow
+@{
+    string imagePath = Url.Action("Image", "Home", new { name = Model.Name, path = Model.Path, imageSize = ImageSize.AsIs});
+
+}
+<img alt="thumbnail of @Model.Name" src="@imagePath" class="thumbnail-border" />
+<span style="text-align: center">@Model.Name</span>
+
+

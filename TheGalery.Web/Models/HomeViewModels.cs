@@ -25,7 +25,8 @@ namespace TheGalery.Web.Models
             var files = directoryInfo.GetFiles();
             foreach (FileInfo file in files)
             {
-                Add(new ImageViewRow(file.Name, file.FullName));
+                Add(new ImageViewRow(file.Name, file.FullName, 
+                    ImageSize.Small));
             }
         }
     }
@@ -34,11 +35,21 @@ namespace TheGalery.Web.Models
     {
         public string Name { get; private set; }
         public string Path { get; private set; }
+        public ImageSize ImageSize { get; private set; }
 
-        public ImageViewRow(string name, string path)
+        public ImageViewRow(string name, string path, ImageSize imageSize)
         {
             Name = name;
             Path = path;
+            ImageSize = imageSize;
         }
+    }
+
+    public enum ImageSize
+    {
+        Small,
+        Medium,
+        Large,
+        AsIs
     }
 }

@@ -183,6 +183,7 @@
     <Content Include="fonts\banner.gif" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\home.png" />
+    <Content Include="fonts\home_black.png" />
     <Content Include="fonts\Logo.png" />
     <Content Include="fonts\Yael.png" />
     <Content Include="Global.asax" />
@@ -195,7 +196,6 @@
     <Content Include="Images\Familiy\Empty3.png" />
     <Content Include="Images\Familiy\Featured\gallery-empty.png" />
     <Content Include="Images\Familiy\Empty1.png" />
-    <Content Include="Images\InteriorDesign\gallery-empty.png" />
     <Content Include="Images\InteriorDesign\WP_20140526_005.jpg" />
     <Content Include="Images\InteriorDesign\WP_20140531_001.jpg" />
     <Content Include="Images\InteriorDesign\WP_20140531_002.jpg" />
@@ -273,6 +273,7 @@
     <Content Include="Views\Home\Thumbnail.cshtml" />
     <Content Include="Views\Home\Images.cshtml" />
     <Content Include="Views\Home\Image.cshtml" />
+    <Content Include="Views\Home\Photo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
