@@ -198,6 +198,9 @@
     <Content Include="Images\InteriorDesign\WP_20140531_002.jpg" />
     <Content Include="Images\Misc\gallery-empty.png" />
     <Content Include="Images\Passport\gallery-empty.png" />
+    <Content Include="Images\WP_20141203_07_39_58_Pro.jpg" />
+    <Content Include="Images\WP_20141203_07_40_16_Pro.jpg" />
+    <Content Include="Images\WP_20141203_07_40_26_Pro.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
@@ -205,6 +208,8 @@
     <None Include="Properties\PublishProfiles\yaeldayanphoto %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\yaeldayanphoto.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\galleria-1.4.2.js" />
+    <Content Include="Scripts\galleria-1.4.2.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -216,6 +221,13 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="themes\classic\classic-demo.html" />
+    <Content Include="themes\classic\classic-loader.gif" />
+    <Content Include="themes\classic\classic-map.png" />
+    <Content Include="themes\classic\galleria.classic.css" />
+    <Content Include="themes\classic\galleria.classic.js" />
+    <Content Include="themes\classic\galleria.classic.min.js" />
+    <Content Include="Views\Home\galleria-1.4.2.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
