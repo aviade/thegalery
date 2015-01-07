@@ -9,26 +9,21 @@
     @Styles.Render("~/Content/thumbnails.css")
 </head>
 <body>
-    <div class="navbar navbar-inverse">
-        <div class="container">
-            <div class="navbar navbar-left navbar-image">
+    <div class="navbar-w">
+        <div class="container-w">
+            <div class="navbar-left navbar-image">
                 <a href="@Url.Action("Index", "Home")">
                     <img alt="home" src="~/fonts/Yael.png" />
                 </a>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse-w">
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container-w body-content">
         @RenderBody()
     </div>
-    <hr />
-    <footer class="container body-content">
-        <p>&copy; @DateTime.Now.Year - The Galery!</p>
-    </footer>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

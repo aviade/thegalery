@@ -177,14 +177,12 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Content\BackArrow.png" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="bootstrap-old.css" />
     <Content Include="Content\thumbnails.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\back.png" />
     <Content Include="fonts\BackArrow.png" />
     <Content Include="fonts\banner.gif" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\home.png" />
     <Content Include="fonts\home_black.png" />
     <Content Include="fonts\Logo.png" />
@@ -222,6 +220,8 @@
     <Content Include="jbcore\classic\fonts\juicebox.woff" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Properties\PublishProfiles\thegalery.pubxml" />
+    <None Include="Properties\PublishProfiles\yaeldayanphoto %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\yaeldayanphoto.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -283,9 +283,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>

@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "The Galery";
 }
-
 <!--START JUICEBOX EMBED-->
 <script src="jbcore/juicebox.js"></script>
 <script>
@@ -14,9 +13,9 @@
         backgroundColor: "#333333"
     });
 </script>
-<div id="juicebox-container"></div>
 <!--END JUICEBOX EMBED-->
 
+<div id="juicebox-container"></div>
 <ul class="thumbnails" data-role="listview">
     @foreach (ImageGroupViewModel imageGroup in @Model.Images)
     {
@@ -31,3 +30,4 @@
         </li>
     }
 </ul>
+
