@@ -12,11 +12,10 @@
     @foreach (ImageViewRow photo in Model)
     {
         string imagePath = Url.Action("Image", "Home", new { name = photo.Name, path = photo.Path, imageSize = ImageSize.Medium});
-        string imageRef = Url.Action("Photo", "Home", new { name = photo.Name, path = photo.Path });
+        string imageRef = Url.Action("Photo", "Home", new { name = photo.Name, path = photo.Path, groupName = Model.GroupName });
         <li>
             <a href="@imageRef">
                 <img alt="thumbnail of @photo.Name" src="@imagePath" class="thumbnail-border" />
-                <span class="below-image">@photo.Name</span>
             </a>
         </li>
     }

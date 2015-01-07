@@ -22,3 +22,24 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* Styles for back arrow
+-----------------------------------------------------------*/
+a.back_arrow {
+    background: url('BackArrow.png') no-repeat top;
+    width: 30px;
+    height: 30px;
+    float: left;
+    border: 0;
+    text-indent: -9999px;
+    margin-right: 0.25em;
+    position: relative;
+    top: 6px;
+}
+
+.back_arrow_text {
+    font-size: 1.4em;
+    font-family: "Segoe UI Light", "Segoe UI",sans-serif;
+    font-weight: bold;
+    line-height: 150%;
+}

@@ -59,9 +59,9 @@ namespace TheGalery.Web.Controllers
         {
             return PartialView(new ImageViewRow(name, path, imageSize));
         }
-        public ActionResult Photo(string name, string path)
+        public ActionResult Photo(string name, string path, string groupName)
         {
-            return View(new ImageViewRow(name, path, ImageSize.Large));
+            return View(new PhotoViewRow(name, path, ImageSize.Large, groupName));
         }
     }
 }

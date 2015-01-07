@@ -176,10 +176,13 @@
     <Content Include="config.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Content\BackArrow.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\thumbnails.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\back.png" />
+    <Content Include="fonts\BackArrow.png" />
     <Content Include="fonts\banner.gif" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\home.png" />
@@ -217,6 +220,7 @@
     <Content Include="jbcore\classic\fonts\juicebox.eot" />
     <Content Include="jbcore\classic\fonts\juicebox.ttf" />
     <Content Include="jbcore\classic\fonts\juicebox.woff" />
+    <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Properties\PublishProfiles\thegalery.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
