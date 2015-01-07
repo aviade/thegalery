@@ -14,6 +14,8 @@ namespace TheGalery.Core.Readers
             result.Add(new ImageGroup("Passport"));
             result.Add(new ImageGroup("InteriorDesign"));
             result.Add(new ImageGroup("Familiy"));
+            result.Add(new ImageGroup("Art"));
+            result.Add(new ImageGroup("Misc"));
         }
 
         public Task<List<ImageGroup>> GetAllImages()

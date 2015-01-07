@@ -16,16 +16,17 @@ namespace TheGalery.Web.Models
 
     public class ImageGroupViewModel : List<ImageViewRow>
     {
-        public string Name { get; private set; }
+        public string GroupName { get; private set; }
 
-        public ImageGroupViewModel(string name, string path)
+        public ImageGroupViewModel(string groupName, string imagesFolder)
         {
-            Name = name;
-            var directoryInfo = new DirectoryInfo(path);
+            GroupName = groupName;
+            var directoryInfo = new DirectoryInfo(imagesFolder);
             var files = directoryInfo.GetFiles();
             foreach (FileInfo file in files)
             {
-                Add(new ImageViewRow(file.Name, file.FullName));
+                Add(new ImageViewRow(file.Name, file.FullName, 
+                    ImageSize.Small));
             }
         }
     }
@@ -34,11 +35,31 @@ namespace TheGalery.Web.Models
     {
         public string Name { get; private set; }
         public string Path { get; private set; }
+        public ImageSize ImageSize { get; private set; }
 
-        public ImageViewRow(string name, string path)
+        public ImageViewRow(string name, string path, ImageSize imageSize)
         {
             Name = name;
             Path = path;
+            ImageSize = imageSize;
         }
+    }
+
+    public class PhotoViewRow: ImageViewRow
+    {
+        public string GroupName { get; private set; }
+
+        public PhotoViewRow(string name, string path, ImageSize imageSize, string groupName) : base(name, path, imageSize)
+        {
+            GroupName = groupName;
+        }
+    }
+
+    public enum ImageSize
+    {
+        Small,
+        Medium,
+        Large,
+        AsIs
     }
 }

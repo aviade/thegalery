@@ -1,5 +1,70 @@
-﻿    /*  Thumbnail Layout
+﻿    /*  ImagesLayout
 -------------------------------------------------------*/
+
+ul.images {
+    margin:0;
+    padding:0;
+}
+
+    ul.images li {
+        position: relative;
+        list-style: none;
+        float: left;
+        margin: 4px;
+        padding: 3px;
+        font-size: small;
+        text-align: center;
+        border: 1px solid transparent;
+        display: block;
+    }
+    
+        ul.images li .image-overlay {
+            display: none;
+            padding: 5px;
+            background-color: #fff;
+            color: #343434;
+    
+            /*CSS3 properties*/
+            border-radius: 3px 3px 0 0;
+            -moz-border-radius: 3px 3px 0 0;
+            -webkit-border-radius: 3px 3px 0 0;
+            background-color: rgba(255, 255, 255, 0.75);
+            word-wrap: break-word; 
+        }
+    
+        ul.images li .below-image {
+            line-height: normal;
+        }
+
+        ul.images li img {
+            margin: auto;
+            display: inline;
+            vertical-align: middle;
+        }
+
+    ul.images li:hover {
+        background: #f3f6f7;
+        border-color: #dbe2e5;
+    
+        /*CSS3 properties*/
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        box-shadow: 0px 0px 3px #d0d0d0;
+        -moz-box-shadow: 0px 0px 3px #d0d0d0;
+        -webkit-box-shadow: 0px 0px 3px #d0d0d0;
+    }
+
+        ul.images li:hover .image-overlay {
+           display: block;
+           position: absolute;
+           top: 0;
+           left: 0;
+           line-height: normal;
+        }
+    /*  Thumbnail Layout
+-------------------------------------------------------*/
+
 .thumbnail-border, .large-photo {
     border: 1px solid #dbe2e5;
     display: block;

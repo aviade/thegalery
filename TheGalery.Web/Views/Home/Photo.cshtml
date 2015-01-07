@@ -1,0 +1,14 @@
+﻿@using TheGalery.Web.Models
+@model PhotoViewRow
+@{
+    string imagePath = Url.Action("Image", "Home", new { name = Model.Name, path = Model.Path, imageSize = ImageSize.AsIs });
+    string title = "Return to " + Model.GroupName;
+}
+<h2 class="back_arrow_text">
+    @Html.ActionLink(title, "Images", "Home", new { name = Model.GroupName }, new { @class = "back_arrow", title })
+    <span id="local_page_title">@title</span>
+</h2>
+<img alt="thumbnail of @Model.Name" src="@imagePath" class="thumbnail-border" />
+<span style="text-align: center">@Model.Name</span>
+
+
