@@ -3,19 +3,6 @@
 @{
     ViewBag.Title = "The Galery";
 }
-<!--START JUICEBOX EMBED-->
-<script src="jbcore/juicebox.js"></script>
-<script>
-    new juicebox({
-        containerId: 'juicebox-container',
-        galleryWidth: '70%',
-        galleryHeight: '70%',
-        backgroundColor: "#333333"
-    });
-</script>
-<!--END JUICEBOX EMBED-->
-
-<div id="juicebox-container"></div>
 <ul class="thumbnails" data-role="listview">
     @foreach (ImageGroupViewModel imageGroup in @Model.Images)
     {
