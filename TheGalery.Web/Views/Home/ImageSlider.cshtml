@@ -1,0 +1,26 @@
+﻿<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/galleria/galleria-1.4.2.min.js"></script>
+
+<style>
+    .galleria {
+        width: 768px;
+        height: 400px;
+        background: #333333;
+    }
+</style>
+
+<div class="galleria">
+    <img src="~/Images/WP_20141203_07_39_58_Pro.jpg" />
+    <img src="~/Images/WP_20141203_07_40_16_Pro.jpg" />
+    <img src="~/Images/WP_20141203_07_40_26_Pro.jpg" />
+</div>
+<script>
+    Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
+    Galleria.run('.galleria', {
+        autoplay: 2000,
+        carousel: false,
+        overlayBackground: "#333333"
+    });
+
+</script>
+
