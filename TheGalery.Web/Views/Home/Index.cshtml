@@ -3,10 +3,10 @@
 @{
     ViewBag.Title = "The Galery";
 }
-@Html.Partial("ImageSlider")
+@Html.Partial("ImageSlider", Model.RootImageGroup)
 
 <ul class="thumbnails" data-role="listview">
-    @foreach (ImageGroupViewModel imageGroup in @Model.Images)
+    @foreach (ImageGroupViewModel imageGroup in @Model.ImageGroups)
     {
         string thumbnailpath = Url.Action("Thumbnail", "Home", new { name = imageGroup.GroupName });
         string imagePath = Url.Action("Images", "Home", new { name = imageGroup.GroupName });

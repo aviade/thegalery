@@ -13,16 +13,38 @@ namespace TheGalery.Web.Controllers
         {
             var manager = new ImageManager(UserCredentials.Default);
             List<ImageGroup> images = manager.GetAllImages().Result;
+
             var imageGroupViewList = new List<ImageGroupViewModel>();
             foreach (ImageGroup imageGroup in images)
             {
                 string name = imageGroup.Name;
-                string path = Server.MapPath(Path.Combine("Images", name));
-                var groupViewRow = new ImageGroupViewModel(name, path);
+                ImageGroupViewModel groupViewRow = GetImageGroupViewModel(name);
                 imageGroupViewList.Add(groupViewRow);
             }
 
-            return View(new HomeViewModel(imageGroupViewList));
+            ImageGroupViewModel rootImageGroup = GetImageGroupViewModel(string.Empty); 
+            return View(new HomeViewModel(rootImageGroup, imageGroupViewList));
+        }
+
+        private ImageGroupViewModel GetImageGroupViewModel(string name)
+        {
+            var groupViewRow = new ImageGroupViewModel(name);
+            string folderPath = Path.Combine("~/Images", name);
+            string path = Server.MapPath(folderPath);
+            var directoryInfo = new DirectoryInfo(path);
+            var files = directoryInfo.GetFiles();
+            foreach (FileInfo file in files)
+            {
+                string fileName = file.Name;
+                if (!string.IsNullOrEmpty(name))
+                {
+                    name = "/" + name;
+                }
+                string relativePath = string.Format("/Images{0}/{1}", name, fileName);
+                groupViewRow.Add(new ImageViewRow(fileName, file.FullName,
+                    ImageSize.Small, relativePath));
+            }
+            return groupViewRow;
         }
 
         public ActionResult About()
@@ -43,25 +65,25 @@ namespace TheGalery.Web.Controllers
         {
             var imageManager = new ImageManager(UserCredentials.Default);
             ImageGroup imageGroup = imageManager.GetImages(name).Result;
-            string path = Server.MapPath(string.Format("~/Images/{0}", name));
-            return PartialView(new ImageGroupViewModel(imageGroup.Name, path));
+            var imageGroupViewModel = GetImageGroupViewModel(imageGroup.Name);
+            return PartialView(imageGroupViewModel);
         }
 
         public ActionResult Images(string name)
         {
             var imageManager = new ImageManager(UserCredentials.Default);
             ImageGroup imageGroup = imageManager.GetImages(name).Result;
-            string path = Server.MapPath(string.Format("~/Images/{0}", name));
-            return View(new ImageGroupViewModel(imageGroup.Name, path));
+            var imageGroupViewModel = GetImageGroupViewModel(imageGroup.Name);
+            return View(imageGroupViewModel);
         }
 
         public ActionResult Image(string name, string path, ImageSize imageSize)
         {
-            return PartialView(new ImageViewRow(name, path, imageSize));
+            return PartialView(new ImageViewRow(name, path, imageSize, ""));
         }
         public ActionResult Photo(string name, string path, string groupName)
         {
-            return View(new PhotoViewRow(name, path, ImageSize.Large, groupName));
+            return View(new PhotoViewRow(name, path, ImageSize.Large, groupName, ""));
         }
     }
 }

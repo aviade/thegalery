@@ -1,26 +1,39 @@
-﻿<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+﻿@using TheGalery.Web.Models
+@model ImageGroupViewModel
+@{
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/galleria/galleria-1.4.2.min.js"></script>
 
 <style>
     .galleria {
-        width: 768px;
-        height: 400px;
+        width: 908px;
+        height: 500px;
         background: #333333;
+        border: 1px solid transparent;
     }
 </style>
 
-<div class="galleria">
-    <img src="~/Images/WP_20141203_07_39_58_Pro.jpg" />
-    <img src="~/Images/WP_20141203_07_40_16_Pro.jpg" />
-    <img src="~/Images/WP_20141203_07_40_26_Pro.jpg" />
+<div>
+    <div class="galleria">
+        @foreach (ImageViewRow row in @Model)
+        {
+            <img src="@row.RelativePath" />
+        }
+    </div>
 </div>
 <script>
     Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
-    Galleria.run('.galleria', {
+    Galleria.configure({
+        lightbox: true,
         autoplay: 2000,
         carousel: false,
-        overlayBackground: "#333333"
+        thumbnails: 'numbers',
+        overlayBackground: "#333333",
+    });
+
+    Galleria.run('.galleria', {
     });
 
 </script>
-

@@ -8,7 +8,7 @@ namespace TheGalery.Core.Readers
 {
     public class OneDriveReader: IFileShareReader
     {
-        public Task<List<ImageGroup>> GetAllImages()
+        public Task<ImageLibrary> GetAllImages()
         {
             throw new NotImplementedException();
         }

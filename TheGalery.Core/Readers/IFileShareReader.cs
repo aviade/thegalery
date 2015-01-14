@@ -5,7 +5,7 @@ namespace TheGalery.Core.Readers
 {
     public interface IFileShareReader
     {
-        Task<List<ImageGroup>> GetAllImages();
+        Task<ImageLibrary> GetAllImages();
         Task<ImageGroup> GetImages(string name);
     }
 }

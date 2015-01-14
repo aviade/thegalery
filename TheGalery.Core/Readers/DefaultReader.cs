@@ -6,19 +6,19 @@ namespace TheGalery.Core.Readers
 {
     internal class DefaultReader : IFileShareReader
     {
-        private readonly List<ImageGroup> result;
+        private readonly ImageLibrary result;
 
         public DefaultReader()
         {
-            result = new List<ImageGroup>();
+            result = new ImageLibrary();
             result.Add(new ImageGroup("Passport"));
-            result.Add(new ImageGroup("InteriorDesign"));
+            result.Add(new ImageGroup("Interior Design"));
             result.Add(new ImageGroup("Familiy"));
             result.Add(new ImageGroup("Art"));
             result.Add(new ImageGroup("Misc"));
         }
 
-        public Task<List<ImageGroup>> GetAllImages()
+        public Task<ImageLibrary> GetAllImages()
         {
             return Task.FromResult(result);
         }

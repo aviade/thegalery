@@ -6,11 +6,13 @@ namespace TheGalery.Web.Models
 {
     public class HomeViewModel
     {
-        public IEnumerable<ImageGroupViewModel> Images { get; private set; }
+        public ImageGroupViewModel RootImageGroup { get; private set; }
+        public IEnumerable<ImageGroupViewModel> ImageGroups { get; private set; }
 
-        public HomeViewModel(IEnumerable<ImageGroupViewModel> images)
+        public HomeViewModel(ImageGroupViewModel rootImageGroup, IEnumerable<ImageGroupViewModel> imageGroups)
         {
-            Images = images;
+            RootImageGroup = rootImageGroup;
+            ImageGroups = imageGroups;
         }
     }
 
@@ -18,16 +20,15 @@ namespace TheGalery.Web.Models
     {
         public string GroupName { get; private set; }
 
-        public ImageGroupViewModel(string groupName, string imagesFolder)
+        public ImageGroupViewModel(string groupName)
         {
             GroupName = groupName;
-            var directoryInfo = new DirectoryInfo(imagesFolder);
-            var files = directoryInfo.GetFiles();
-            foreach (FileInfo file in files)
-            {
-                Add(new ImageViewRow(file.Name, file.FullName, 
-                    ImageSize.Small));
-            }
+        }
+
+        private string GetRelativePath(string folder, string fileName)
+        {
+            string relativePath = string.Format("~/{0}/{1}", folder.Replace(@"\", "/"), fileName);
+            return relativePath;
         }
     }
 
@@ -36,12 +37,14 @@ namespace TheGalery.Web.Models
         public string Name { get; private set; }
         public string Path { get; private set; }
         public ImageSize ImageSize { get; private set; }
+        public string RelativePath { get; private set; }
 
-        public ImageViewRow(string name, string path, ImageSize imageSize)
+        public ImageViewRow(string name, string path, ImageSize imageSize, string relativePath)
         {
             Name = name;
             Path = path;
             ImageSize = imageSize;
+            RelativePath = relativePath;
         }
     }
 
@@ -49,7 +52,7 @@ namespace TheGalery.Web.Models
     {
         public string GroupName { get; private set; }
 
-        public PhotoViewRow(string name, string path, ImageSize imageSize, string groupName) : base(name, path, imageSize)
+        public PhotoViewRow(string name, string path, ImageSize imageSize, string groupName, string relativePath) : base(name, path, imageSize, relativePath)
         {
             GroupName = groupName;
         }

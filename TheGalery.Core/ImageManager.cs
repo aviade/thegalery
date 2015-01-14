@@ -6,14 +6,14 @@ namespace TheGalery.Core
 {
     public class ImageManager
     {
-        private UserCredentials credentials;
+        private readonly UserCredentials credentials;
 
         public ImageManager(UserCredentials credentials)
         {
             this.credentials = credentials;
         }
 
-        public async Task<List<ImageGroup>> GetAllImages()
+        public async Task<ImageLibrary> GetAllImages()
         {
             IFileShareReader reader = ReaderFactory.GetReader(credentials);
             return await reader.GetAllImages();
@@ -24,6 +24,10 @@ namespace TheGalery.Core
             IFileShareReader reader = ReaderFactory.GetReader(credentials);
             return await reader.GetImages(name);
         }
+    }
 
+    public class ImageLibrary : List<ImageGroup>
+    {
+        public ImageGroup Root = new ImageGroup("Default");
     }
 }
