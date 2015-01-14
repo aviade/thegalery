@@ -176,8 +176,6 @@
     <Content Include="Content\BackArrow.png" />
     <Content Include="Content\thumbnails.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\back.png" />
-    <Content Include="fonts\BackArrow.png" />
     <Content Include="fonts\banner.gif" />
     <Content Include="fonts\home.png" />
     <Content Include="fonts\home_black.png" />
