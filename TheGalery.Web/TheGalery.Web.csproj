@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -222,7 +223,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="galleria\LICENSE" />
-    <Content Include="Views\Home\ImageSlider.cshtml" />
+    <Content Include="Views\Gallery\ImageSlider.cshtml" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Properties\PublishProfiles\thegalery.pubxml" />
     <None Include="Properties\PublishProfiles\yaeldayanphoto %282%29.pubxml" />
@@ -252,7 +253,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -274,10 +275,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\Thumbnail.cshtml" />
-    <Content Include="Views\Home\Images.cshtml" />
-    <Content Include="Views\Home\Image.cshtml" />
-    <Content Include="Views\Home\Photo.cshtml" />
+    <Content Include="Views\Gallery\Thumbnail.cshtml" />
+    <Content Include="Views\Gallery\Images.cshtml" />
+    <Content Include="Views\Gallery\Image.cshtml" />
+    <Content Include="Views\Gallery\Photo.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

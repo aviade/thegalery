@@ -1,22 +1,4 @@
-﻿@using TheGalery.Web.Models
-@model HomeViewModel
-@{
+﻿@{
     ViewBag.Title = "The Galery";
 }
-@Html.Partial("ImageSlider", Model.RootImageGroup)
-
-<ul class="thumbnails" data-role="listview">
-    @foreach (ImageGroupViewModel imageGroup in @Model.ImageGroups)
-    {
-        string thumbnailpath = Url.Action("Thumbnail", "Home", new { name = imageGroup.GroupName });
-        string imagePath = Url.Action("Images", "Home", new { name = imageGroup.GroupName });
-        <li>
-            <a href="@imagePath">
-                <span class="below-image">@imageGroup.GroupName</span>
-                <span>(@imageGroup.Count)</span>
-                <img alt="Images from @imageGroup.GroupName" src="@thumbnailpath" class="thumbnail-no-border" />
-            </a>
-        </li>
-    }
-</ul>
 
