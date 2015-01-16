@@ -46,7 +46,19 @@ a.back_arrow {
     line-height: 150%;
 }
 
+/* Styles for galleria 
+-----------------------------------------------------------*/
+.galleria {
+    border: 1px solid #333333;
+    width: 90%;
+    height: 500px;
+}
 
+@media (max-width: 767px) {
+    .galleria {
+        height: 250px;
+    }
+}
 /* Styles for nav bar
 -----------------------------------------------------------*/
 @media (min-width: 768px) {
@@ -64,14 +76,12 @@ a.back_arrow {
 }
 
 .navbar-w {
-    position: relative;
     z-index: 1000;
     background-color: white;
     width: 100%;
 }
 
 .navbar-collapse-w {
-    max-height: 340px;
     padding-right: 15px;
     padding-left: 15px;
     overflow-x: visible;
@@ -199,7 +209,12 @@ a.back_arrow {
         line-height: 20px;
     }
 
+
 @media (max-width: 767px) {
+    .navbar-collapse-w {
+        visibility: hidden;
+    }
+
     .navbar-nav .open .dropdown-menu {
         position: static;
         float: none;
