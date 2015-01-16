@@ -45,9 +45,9 @@ namespace TheGalery.Web
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
             // Uncomment the following lines to enable logging in with third party login providers
-            app.UseMicrosoftAccountAuthentication(
-                clientId: "0000000044136192",
-                clientSecret: "ocaLvakAc2SgL4Qa47oPkUTTefadNKwV");
+            //app.UseMicrosoftAccountAuthentication(
+            //    clientId: "",
+            //    clientSecret: "");
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",

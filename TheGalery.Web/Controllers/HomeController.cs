@@ -1,17 +1,14 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
-using System.Web.Mvc;
-using TheGalery.Core;
-using TheGalery.Web.Models;
+﻿using System.Web.Mvc;
 
 namespace TheGalery.Web.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            ViewBag.HeaderImagePath = "/fonts/Yael.png";
+            ViewBag.HeaderImagePath = "/fonts/Gallery-Header.png";
+            return View();
             return RedirectToAction("Index", "Gallery");
         }
 
