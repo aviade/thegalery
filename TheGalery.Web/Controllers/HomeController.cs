@@ -11,6 +11,7 @@ namespace TheGalery.Web.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.HeaderImagePath = "/fonts/Yael.png";
             return RedirectToAction("Index", "Gallery");
         }
 

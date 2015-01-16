@@ -28,14 +28,15 @@
 -----------------------------------------------------------*/
 a.back_arrow {
     background: url('BackArrow.png') no-repeat top;
-    width: 30px;
-    height: 30px;
+    margin: 2px;
+    width: 23px;
+    height: 19px;
     float: left;
     border: 0;
     text-indent: -9999px;
     margin-right: 0.25em;
     position: relative;
-    top: 6px;
+    top: 4px;
 }
 
 .back_arrow_text {

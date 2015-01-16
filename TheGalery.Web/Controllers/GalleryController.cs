@@ -11,6 +11,8 @@ namespace TheGalery.Web.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.HeaderImagePath = "/fonts/Yael.png";
+
             var manager = GetImageManager();
             List<ImageGroup> images = manager.GetAllImages().Result;
 
@@ -63,6 +65,7 @@ namespace TheGalery.Web.Controllers
 
         public ActionResult Images(string name)
         {
+            ViewBag.HeaderImagePath = "/fonts/Yael.png";
             var manager = GetImageManager();
             ImageGroup imageGroup = manager.GetImages(name).Result;
             var imageGroupViewModel = GetImageGroupViewModel(imageGroup.Name);
@@ -75,6 +78,7 @@ namespace TheGalery.Web.Controllers
         }
         public ActionResult Photo(string name, string path, string groupName)
         {
+            ViewBag.HeaderImagePath = "/fonts/Yael.png";
             return View(new PhotoViewRow(name, path, ImageSize.Large, groupName, ""));
         }
     }
