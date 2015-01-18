@@ -2,14 +2,12 @@
 
 namespace TheGalery.Web.Controllers
 {
-    [RequireHttps]
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
             ViewBag.HeaderImagePath = "/fonts/Gallery-Header.png";
             return View();
-            return RedirectToAction("Index", "Gallery");
         }
 
 
