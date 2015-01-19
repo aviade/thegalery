@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "The Galery";
+    string returnUrl = Url.Action("Manage", "Home");
 }
 
-<p><a href="@Url.Action("Index", "Auth")" class="btn">Login to OneDrive &raquo;</a></p>
+<p><a href="@Url.Action("Index", "Auth", new { returnUrl })" class="btn">Login to OneDrive &raquo;</a></p>

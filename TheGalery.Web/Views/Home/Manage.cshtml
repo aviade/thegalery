@@ -1,0 +1,18 @@
+﻿@model TheGalery.Web.Models.ManageViewModel
+@{
+    ViewBag.Title = "The Galery";
+
+}
+
+@if (!string.IsNullOrEmpty(Model.UserName))
+{
+    <h3>User: @Model.UserName</h3>
+
+    <img src="@Model.PhotoLocation" />
+
+    <pre>
+    @Model.CalendarJson
+    </pre>
+
+}
+

@@ -25,7 +25,7 @@ namespace TheGalery.Web.Controllers
             }
 
             ImageGroupViewModel rootImageGroup = GetImageGroupViewModel(string.Empty); 
-            return View(new HomeViewModel(rootImageGroup, imageGroupViewList));
+            return View(new GaleryViewModel(rootImageGroup, imageGroupViewList));
         }
 
         private static ImageManager GetImageManager()
