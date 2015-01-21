@@ -52,16 +52,17 @@ namespace TheGalery.Web.Controllers
             if (result.Status == LiveConnectSessionStatus.Connected)
             {
                 var client = new LiveConnectClient(authClient.Session);
-                AuthManager.Instance.Client = client;
 
                 LiveOperationResult meResult = await client.GetAsync("me");
                 string userName = meResult.Result["name"].ToString();
 
+                Session[Constants.LiveSdkSessionKey] = authClient.Session;
                 CreateAuthTicket(userName);
 
                 string returnUrl = result.State;
 
-                this.Response.Redirect(returnUrl);
+                // Redirecting without terminating the session
+                Response.Redirect(returnUrl, false);
                 return null;
             }
 
@@ -96,7 +97,6 @@ namespace TheGalery.Web.Controllers
                 HttpOnly = true
             };
             Response.AppendCookie(authCookie);
-
         }
     }
 
@@ -114,7 +114,6 @@ namespace TheGalery.Web.Controllers
 
             var authCookie = httpContext.Request.Cookies[cookieName];
             var authTicket = FormsAuthentication.Decrypt(authCookie.Value);
-
             IPrincipal userPrincipal = new MyPrincipal(authTicket.Name);
 
             // Inject the custom principal in the HttpContext

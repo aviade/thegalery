@@ -16,19 +16,17 @@ namespace TheGalery.Web.Controllers
         public async Task<ActionResult> Manage()
         {
             var viewModel = new ManageViewModel();
-            LiveConnectClient client = AuthManager.Instance.Client;
-            if (client != null)
-            {
-                LiveOperationResult meResult = await client.GetAsync("me");
-                LiveOperationResult mePicResult = await client.GetAsync("me/picture");
-                LiveOperationResult calendarResult = await client.GetAsync("me/calendars");
+            LiveConnectSession session = (LiveConnectSession)Session[Constants.LiveSdkSessionKey];
+            var client = new LiveConnectClient(session);
+            LiveOperationResult meResult = await client.GetAsync("me");
+            LiveOperationResult mePicResult = await client.GetAsync("me/picture");
+            LiveOperationResult calendarResult = await client.GetAsync("me/calendars");
 
-                string userName = meResult.Result["name"].ToString();
-                viewModel.UserName = userName;
-                viewModel.PhotoLocation = mePicResult.Result["location"].ToString();
-                viewModel.CalendarJson = calendarResult.RawResult;
+            string userName = meResult.Result["name"].ToString();
+            viewModel.UserName = userName;
+            viewModel.PhotoLocation = mePicResult.Result["location"].ToString();
+            viewModel.CalendarJson = calendarResult.RawResult;
 
-            }
             return View(viewModel);
         }
 
