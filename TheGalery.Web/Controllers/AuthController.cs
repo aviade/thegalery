@@ -20,7 +20,9 @@ namespace TheGalery.Web.Controllers
         {
             "wl.signin",
             "wl.basic",
-            "wl.calendars"
+            "wl.calendars",
+            "wl.skydrive", 
+            "wl.photos"
         };
 
         private const string RedirectUri = "http://yaeldayanphoto.azurewebsites.net/Auth/Redirect";
@@ -52,7 +54,6 @@ namespace TheGalery.Web.Controllers
             if (result.Status == LiveConnectSessionStatus.Connected)
             {
                 var client = new LiveConnectClient(authClient.Session);
-
                 LiveOperationResult meResult = await client.GetAsync("me");
                 string userName = meResult.Result["name"].ToString();
 
@@ -73,6 +74,7 @@ namespace TheGalery.Web.Controllers
         {
             authClient.ClearSession(this.HttpContext);
             Response.Cookies.Remove(FormsAuthentication.FormsCookieName);
+            Session.Clear();
 
             string home = Url.Action("Index", "Home");
             Response.Redirect(home);
@@ -101,16 +103,14 @@ namespace TheGalery.Web.Controllers
     }
 
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, Inherited = true, AllowMultiple = true)]
-    public class MyAuthorizeAttribute : AuthorizeAttribute
+    public class LiveSdkAuthorizeAttribute : AuthorizeAttribute
     {
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
-            string cookieName = FormsAuthentication.FormsCookieName;
-            if (httpContext.Request.Cookies == null ||
-                httpContext.Request.Cookies[cookieName] == null)
-            {
-                return false;
-            }
+            if (!LiveSeesionAvilable(httpContext)) return false;
+
+            string cookieName;
+            if (!TryGetAuthCookie(httpContext, out cookieName)) return false;
 
             var authCookie = httpContext.Request.Cookies[cookieName];
             var authTicket = FormsAuthentication.Decrypt(authCookie.Value);
@@ -118,6 +118,27 @@ namespace TheGalery.Web.Controllers
 
             // Inject the custom principal in the HttpContext
             httpContext.User = userPrincipal;
+            return true;
+        }
+
+        private static bool TryGetAuthCookie(HttpContextBase httpContext, out string cookieName)
+        {
+            cookieName = FormsAuthentication.FormsCookieName;
+            if (httpContext.Request.Cookies == null ||
+                httpContext.Request.Cookies[cookieName] == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private static bool LiveSeesionAvilable(HttpContextBase httpContext)
+        {
+            var session = (LiveConnectSession) httpContext.Session[Constants.LiveSdkSessionKey];
+            if (session == null || session.Expires <= DateTimeOffset.Now)
+            {
+                return false;
+            }
             return true;
         }
     }

@@ -13,21 +13,21 @@ namespace TheGalery.Core
             this.credentials = credentials;
         }
 
-        public async Task<ImageLibrary> GetAllImages()
+        public async Task<ImageLibrary> GetFolders()
         {
             IFileShareReader reader = ReaderFactory.GetReader(credentials);
-            return await reader.GetAllImages();
+            return await reader.GetFolders();
         }
 
-        public async Task<ImageGroup> GetImages(string name)
+        public async Task<ImageFolder> GetImages(string name)
         {
             IFileShareReader reader = ReaderFactory.GetReader(credentials);
             return await reader.GetImages(name);
         }
     }
 
-    public class ImageLibrary : List<ImageGroup>
+    public class ImageLibrary : List<ImageFolder>
     {
-        public ImageGroup Root = new ImageGroup("Default");
+        public ImageFolder Root = new ImageFolder("Default");
     }
 }

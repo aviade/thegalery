@@ -6,10 +6,16 @@
 
 @if (!string.IsNullOrEmpty(Model.UserName))
 {
-    <h3>User: @Model.UserName</h3>
-
-    <img src="@Model.PhotoLocation" />
-
+    <div class="user_frame">
+        <ul>
+            <li>
+                <img class="user_image" src="@Model.PhotoLocation" />
+            </li>
+            <li>
+                <p class="username_text">@Model.UserName</p>
+            </li>
+        </ul>
+    </div>
     <pre>
     @Model.CalendarJson
     </pre>

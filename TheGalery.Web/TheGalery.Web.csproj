@@ -191,6 +191,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\BackArrow.png" />
+    <Content Include="Content\Management.css" />
     <Content Include="Content\thumbnails.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\banner.gif" />

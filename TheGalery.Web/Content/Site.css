@@ -59,14 +59,12 @@ a.back_arrow {
     text-indent: -9999px;
     margin-right: 0.25em;
     position: relative;
-    top: 4px;
+    top: 2px;
 }
 
 .back_arrow_text {
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-family: "Segoe UI Light", "Segoe UI",sans-serif;
-    font-weight: bold;
-    line-height: 150%;
 }
 
 /* Styles for galleria 

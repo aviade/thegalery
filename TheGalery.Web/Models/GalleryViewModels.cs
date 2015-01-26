@@ -24,12 +24,6 @@ namespace TheGalery.Web.Models
         {
             GroupName = groupName;
         }
-
-        private string GetRelativePath(string folder, string fileName)
-        {
-            string relativePath = string.Format("~/{0}/{1}", folder.Replace(@"\", "/"), fileName);
-            return relativePath;
-        }
     }
 
     public class ImageViewRow

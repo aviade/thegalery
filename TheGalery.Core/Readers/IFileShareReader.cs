@@ -3,9 +3,10 @@ using System.Threading.Tasks;
 
 namespace TheGalery.Core.Readers
 {
-    public interface IFileShareReader
+    public interface IFileShareReader   
     {
-        Task<ImageLibrary> GetAllImages();
-        Task<ImageGroup> GetImages(string name);
+        Task<ImageLibrary> GetFolders();
+        Task<ImageLibrary> GetFolders(string path);
+        Task<ImageFolder> GetImages(string name);
     }
 }

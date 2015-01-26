@@ -1,6 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using Microsoft.Live;
+using TheGalery.Core;
+using TheGalery.Core.Readers;
 using TheGalery.Web.Models;
 
 namespace TheGalery.Web.Controllers
@@ -12,20 +15,21 @@ namespace TheGalery.Web.Controllers
             return View();
         }
 
-        [MyAuthorize]
+        [LiveSdkAuthorize]
         public async Task<ActionResult> Manage()
         {
             var viewModel = new ManageViewModel();
-            LiveConnectSession session = (LiveConnectSession)Session[Constants.LiveSdkSessionKey];
+            var session = (LiveConnectSession)Session[Constants.LiveSdkSessionKey];
             var client = new LiveConnectClient(session);
             LiveOperationResult meResult = await client.GetAsync("me");
             LiveOperationResult mePicResult = await client.GetAsync("me/picture");
-            LiveOperationResult calendarResult = await client.GetAsync("me/calendars");
 
             string userName = meResult.Result["name"].ToString();
             viewModel.UserName = userName;
             viewModel.PhotoLocation = mePicResult.Result["location"].ToString();
-            viewModel.CalendarJson = calendarResult.RawResult;
+
+            var oneDriveReader = new OneDriveReader(client);
+            ImageLibrary imageLibrary = await oneDriveReader.GetFolders();
 
             return View(viewModel);
         }

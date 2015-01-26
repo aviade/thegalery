@@ -11,18 +11,6 @@ namespace TheGalery.Core.Readers
             {
                 return new DefaultReader();
             }
-            if (credentialsType == CredentialsType.DropBox)
-            {
-                return new DropBoxReader();
-            }
-            if (credentialsType == CredentialsType.GoogleDrive)
-            {
-                return new GoogleDriveReader();
-            }
-            if (credentialsType == CredentialsType.OneDrive)
-            {
-                return new OneDriveReader();
-            }
             throw new InvalidEnumArgumentException(credentialsType.ToString());
         }
     }

@@ -11,19 +11,24 @@ namespace TheGalery.Core.Readers
         public DefaultReader()
         {
             result = new ImageLibrary();
-            result.Add(new ImageGroup("Passport"));
-            result.Add(new ImageGroup("Interior Design"));
-            result.Add(new ImageGroup("Familiy"));
-            result.Add(new ImageGroup("Art"));
-            result.Add(new ImageGroup("Misc"));
+            result.Add(new ImageFolder("Passport"));
+            result.Add(new ImageFolder("Interior Design"));
+            result.Add(new ImageFolder("Familiy"));
+            result.Add(new ImageFolder("Art"));
+            result.Add(new ImageFolder("Misc"));
         }
 
-        public Task<ImageLibrary> GetAllImages()
+        public Task<ImageLibrary> GetFolders()
         {
             return Task.FromResult(result);
         }
 
-        public Task<ImageGroup> GetImages(string name)
+        public Task<ImageLibrary> GetFolders(string path)
+        {
+            return Task.FromResult(result);
+        }
+
+        public Task<ImageFolder> GetImages(string name)
         {
             return Task.FromResult(result.Single(@group => @group.Name == name));
         }

@@ -9,15 +9,18 @@ namespace TheGalery.Web.Controllers
 {
     public class GalleryController : Controller
     {
-        public ActionResult Index()
+        public GalleryController()
         {
             ViewBag.HeaderImagePath = "/fonts/Yael.png";
+        }
 
+        public ActionResult Index()
+        {
             var manager = GetImageManager();
-            List<ImageGroup> images = manager.GetAllImages().Result;
+            List<ImageFolder> images = manager.GetFolders().Result;
 
             var imageGroupViewList = new List<ImageGroupViewModel>();
-            foreach (ImageGroup imageGroup in images)
+            foreach (ImageFolder imageGroup in images)
             {
                 string groupNane = imageGroup.Name;
                 ImageGroupViewModel groupViewRow = GetImageGroupViewModel(groupNane);
@@ -58,17 +61,16 @@ namespace TheGalery.Web.Controllers
         public ActionResult Thumbnail(string name)
         {
             var manager = GetImageManager();
-            ImageGroup imageGroup = manager.GetImages(name).Result;
-            var imageGroupViewModel = GetImageGroupViewModel(imageGroup.Name);
+            ImageFolder imageFolder = manager.GetImages(name).Result;
+            var imageGroupViewModel = GetImageGroupViewModel(imageFolder.Name);
             return PartialView(imageGroupViewModel);
         }
 
         public ActionResult Images(string name)
         {
-            ViewBag.HeaderImagePath = "/fonts/Yael.png";
             var manager = GetImageManager();
-            ImageGroup imageGroup = manager.GetImages(name).Result;
-            var imageGroupViewModel = GetImageGroupViewModel(imageGroup.Name);
+            ImageFolder imageFolder = manager.GetImages(name).Result;
+            var imageGroupViewModel = GetImageGroupViewModel(imageFolder.Name);
             return View(imageGroupViewModel);
         }
 
@@ -78,7 +80,6 @@ namespace TheGalery.Web.Controllers
         }
         public ActionResult Photo(string name, string path, string groupName)
         {
-            ViewBag.HeaderImagePath = "/fonts/Yael.png";
             return View(new PhotoViewRow(name, path, ImageSize.Large, groupName, ""));
         }
     }
